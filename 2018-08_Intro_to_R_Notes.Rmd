@@ -1,0 +1,407 @@
+---
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  output: default
+author: "This workshop is brought to you by R-Ladies Auckland"
+subtitle: Adapted and shortened from an R-Ladies useR! 2018 R-Curious workshop
+title: "Intro to R"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Welcome
+
+Follow us on twitter!  
+
+@[RLadiesAKL](https://twitter.com/RLadiesAKL) 
+
+@[RLadiesGlobal](https://twitter.com/RLadiesGlobal)
+
+---
+
+# What is the format of this workshop?
+
+### This workshop involves coding tutorials with help from our mentors
+
+--
+
+### Stickynote signalling
+
+<center>
+<h3><span style="color:yellow">yellow</span> I got this
+</center>
+
+
+<center><h3><span style="color:pink">pink</center>
+
+<center><img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:70%">
+</center>
+
+---
+class: inverse, center, middle
+
+# Introduce yourselves - a sentence with your name and background
+
+---
+
+## What do R-users use R for?
+
+A typical data science project looks something like this workflow;<sup>1</sup>
+
+<center>
+![](https://github.com/hadley/r4ds/blob/master/diagrams/data-science-explore.png?raw=true)
+</center>
+
+--
+
+### We will use the following for this workshop :
+
+- [language](https://www.r-project.org/): R
+- [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment): RStudio
+
+--
+
+### Why these tools?
+
+- R was intentionally developed to be a data analysis language 
+- R is open source
+- RStudio is designed to help users use R 
+
+.footnote[
+[1]  [R for Data Science](http://r4ds.had.co.nz/), a great free ebook.]
+---
+
+# Installation 
+
+- install R
+- install RStudio 
+ 
+ 
+Installation instructions [adapted](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd) with appreciation from a previous R-Ladies workshop. 
+
+--
+
+# Getting started in RStudio
+
+### Argh, so many windows
+
+Let's start with a couple useful panes.
+
+- Console
+- Environment, History
+- Files, Plots, Packages, Help, Viewer
+
+If this doesn't look like you, then go to the RStudio menu    `Tools -> Global Options  -> Pane Layout` update and Apply  
+
+---
+
+# How to run code?!
+
+## Running code in the Console
+
+The console is where you can execute single-line R commands.
+The console is located, by default, in the lower left pane. 
+--
+  
+Try `3 + 2` and `Enter`.  
+
+--
+
+Assign the number 5 to an *object* `x` with arrow `<-`.  
+
+```{r eval=FALSE}
+x <- 3 + 2
+```
+--
+What happens when you type `x` into the Console after assigning the value 5 to it? What do you see in the `Environment` pane?
+--
+
+## Running code in code chunks
+
+```{r this is a code chunk}
+# Assign 10 to y. Run this line of code using Ctrl+Enter
+y <- 10
+```
+
+---
+
+# R Markdown
+
+## So far we have run some code, but how do we save it?
+
+We can use [R Markdown](http://r4ds.had.co.nz/r-markdown.html) documents.
+
+> R Markdown provides an unified authoring framework for data science, combining your code, its results, and your prose commentary. R Markdown documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more.
+
+> R Markdown files are designed to be used in three ways:
+
+1. For **communicating** to decision makers, who want to focus on the conclusions, not the code behind the analysis.
+
+2. For **collaborating** with other data scientists (including future you!), who are interested in both your conclusions, and how you reached them ( i.e. the code).
+
+3. As an environment in which to do data science, as a modern day lab **notebook** where you can capture not only what you did, but also what you were thinking.
+
+---
+
+## Opening an R Markdown .Rmd
+
+Open `File -> New File -> R Markdown`.  
+
+--
+
+Follow the prompts to install any required R packages.  
+
+--
+
+Give your document a title, keep the default HTML option and press **ok**.  
+
+--
+
+This will open an `Untitled1` template.  
+
+--
+
+Save your document, you have given your document a title, not saved it!  
+
+--
+
+Now we will `knit` our document to an HTML document using the `knit` button or **control + shift + k**.
+
+---
+
+## Get these slides
+
+We will all work from a personal copy of these slides, accessed from GitHub. Delete everything inside your .Rmd file.
+
+--
+
+###  Find them yourself
+
+Google `github r-ladiesakl`   
+
+Go to the **meetup-presentations_auckland** in pinned repositories ->  **2018-08_Intro_to_R.Rmd** -> **Raw** button 
+
+--
+
+### or Navigate directly to this link
+https://github.com/R-LadiesAKL/meetup-presentations_auckland
+
+--
+
+## Knit the document
+
+Copy and paste the text into your .Rmd file. and `knit`.
+
+This creates a pop out window, but we can also view these notes in the Viewer pane.
+
+
+---
+ 
+
+# Survival tips
+
+- Modern day coding practice comprises almost entirely searching "how do I do `<x>` in `<language>`".
+- The [community](https://community.rstudio.com/) is one of your best resources; talk to each other and make friends and future collaborators.  
+- Type `?function` into the RStudio Console, and the Help pane will display documentation. 
+- Cheatsheets online or in R-Studio Help menu
+- Twitter
+- stackoverflow
+
+<center> ![](https://i.gifer.com/1tUl.gif)
+
+---
+
+class: inverse, center, middle
+
+# Your turn to work through the rest of this tutorial
+
+---
+
+# Packages
+
+Packages are collections of other people's code. Often someone has already written a script that does what you want to do.
+
+For example, we want to import data. We will use a package that helps with data wrangling tasks like this, the [`tidyverse`](https://www.tidyverse.org/). 
+
+We're going to use the metapackage `tidyverse` to help us with our data analysis. 
+
+## Functions
+
+The most common element of packages are functions. R also comes preloaded with a *base* of functions commonly used. 
+
+Functions run other people's code for us, so that we don't have to reinvent the wheel. 
+We will use functions to intall and load the `tidyverse`.
+
+### How to spot a function
+
+- *functions* in R take the form `function()`
+
+---
+
+# Installing and loading packages
+
+We want to install the package `tidyverse`.
+
+### For installation; i.e., first time only.
+`install.packages("<name of package>")`
+ 
+### For loading.
+`library(<name of package>)`
+
+### Let's install and load the tidyverse 
+
+```{r Load the tidyverse package}
+# This is a code chunk. 
+# We can write informative comments with a hash # at the start.
+# Install the tidyverse using the install.packages() function.
+# Load the tidyverse using the library() function. 
+# Press the green arrow in the top right corner of the chunk to run!
+# Don't forget, you need to install the package before you can use it. 
+```
+
+---
+
+# Importing data
+
+## Import the data
+
+Since the data is stored on an online repository, we can import it via URL. 
+
+We can import this data using the `read_csv()` function from the `tidyverse`. 
+
+**This function takes a file argument, such as the URL, which goes between the () as a "character string".**   
+
+The Summer of Tech data is found here: "https://raw.githubusercontent.com/R-LadiesAKL/sotdata/master/Event%20attendances%20data%20Dec%202017.csv"
+
+Try importing the data at the console with `read_csv` with the URL including the " ". What output do you see?
+
+`read_csv` with the argument url produces a data object. An object we can assign.
+
+Open a code chunk *here* and read the data in using `read_csv` and assign `<-` the data to an object called `eventdat`.
+
+- **control+alt+i** to open a code chunk. 
+- press green **play** to run chunk.
+
+---
+
+# Explore and Understand
+
+Let's explore the information in this table.
+
+## Summary functions
+
+Lots of objects in R `<an R object>` are friendly to the `summary(<an R object>)` function. 
+
+What's is the output of `summary` for `eventdat`?
+
+### An alternative to `summary`
+
+An alternative is the `skim()` function from from the `skimr` package.
+
+- install the `skimr` package
+- Open a code chunk here and load the `skimr` package in your notes
+- apply the `skim` function to the `eventdat` data
+
+What is the difference between the output of `summary` and `skim`? Which do you like better and why?
+
+---
+
+# The fine art of wrangling
+
+At this point, we often wish to manipulate the data in some way. This is variously known as wrangling, cleaning, and scrubbing.
+
+To do this, we'll learn a very useful operator, the pipe `%>%`. 
+## The pipe
+
+Piping makes code easier to read (arguably).  
+
+The `head()` function takes one argument, a table: 
+
+```{}
+head(<data>)
+```
+
+But we could also *pipe* `%>%` the data into the function.
+
+```{}
+# Use the pipe function to present the top of the `eventdat` dataset.
+<data> %>% head() 
+```
+
+ 
+
+---
+
+# Visualisation
+
+
+## The structure of a ggplot
+
+The tidy way of plotting data is with the `ggplot2` package, which comes with the `tidyverse`.
+
+What happens when you `%>%` the `eventdat` table into `ggplot()`?
+
+## Aesthetics
+
+We define x and y axes of the plot with aesthetics in `ggplot`.
+
+```{}
+<some data> %>% 
+  ggplot(aes(x = <column1>, y = <column2>))
+```
+
+What happens if you set x and y axes to column names in `aes`? 
+
+---
+
+## Your  first ggplot
+
+In your **dataframe** chose two variables to plot **column1** and ** column2**.
+
+We'll add a plot layer `+` to our ggplot using `geom_point` for a scatterplot. 
+
+Set the x axis to **column1** and the y axis to **column2**.
+
+```{}
+ dataframe> %>% 
+  ggplot(aes(x =  column1, y =  column2)) +
+  geom_point() # Adds a scatterplot.
+```
+
+ 
+---
+
+# Extension tutorials
+
+In groups or alone, choose a tutorial to follow:
+
+Introduction to R 
+- [DataCamp basics](https://www.datacamp.com/courses/free-introduction-to-r%20)
+
+Data wrangling
+- [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
+
+From Excel to R using the Summer of Tech data
+-
+
+Visualisation
+- [ggplot2](https://ggplot2.tidyverse.org/)
+
+---
+
+
+# Acknowledgements
+
+- The installation instructions are [adapted from a previous workshop](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd).  
+- [R-Ladies presentation ninja template](https://alison.rbind.io/post/r-ladies-slides/)
+- This workshop was adapted and shortened from an R-Ladies [useR! 2018 R-Curious workshop](https://github.com/softloud/rcurious).
+ 
+
+
+
+
