@@ -29,17 +29,19 @@ class: inverse, center, middle
 
 # What is the format of this workshop?
 
-### This workshop involves coding tutorials with help from our mentors
 --
+### This workshop involves coding tutorials with help from our mentors with stickynote signalling
 
-### Stickynote signalling
 
 <center>
-<h3><span style="color:yellow">yellow</span> I got this
+<h3><span style="color:yellow ... ">yellow</span> I got this
 </center>
 
+--
 
-<center><h3><span style="color:pink">pink</center>
+or
+
+<center><h3><span style="color:pink ... ">pink</center>
 
 <center><img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:70%">
 </center>
@@ -54,24 +56,17 @@ class: inverse, center, middle
 
 A typical data science project looks something like this workflow;<sup>1</sup>
 
-<center>
-![](https://github.com/hadley/r4ds/blob/master/diagrams/data-science-explore.png?raw=true)
-</center>
+<center> ![](http://r4ds.had.co.nz/diagrams/data-science.png) </center>
+
+
 
 --
 
-### We will use the following for this workshop :
-
-- [language](https://www.r-project.org/): R
-- [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment): RStudio
-
---
-
-### Why these tools?
+### Why use R and Rstudio ?
 
 - R was intentionally developed to be a data analysis language 
 - R is free and open source
-- RStudio is designed to help users use R 
+- RStudio is an [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment) designed to help users use R 
 
 .footnote[
 [1]  [R for Data Science](http://r4ds.had.co.nz/), a great free ebook.]
@@ -103,18 +98,19 @@ If this doesn't look like you, then go to the RStudio menu    `Tools -> Global O
 
 ## Running code in the Console
 
-The console is where you can execute single-line R commands.
+The console is where you can execute single-line R commands.  
 The console is located, by default, in the lower left pane. 
 --
   
 Try `3 + 2` and `Enter`.  
 --
 
-Assign the number 5 to an *object* `x` with arrow assignment `<-`.  
+Assign the number 5 to an object `x` with arrow assignment `<-`.  
 
 ```{r eval=FALSE}
 x <- 3 + 2
 ```
+
 --
 
 What happens when you type `x` into the Console after assigning the value 5 to it? What do you see in the `Environment` pane?
@@ -123,11 +119,13 @@ What happens when you type `x` into the Console after assigning the value 5 to i
 
 ## Running code in code chunks
 
-```{r this is a code chunk}
-# Assign 10 to y. Run this line of code using Ctrl+Enter
+````
+```{ }`r ''`
+# Here's a code chunk. 
+# Assign 10 to y. Run this line of code using Ctrl+Enter 
 y <- 10
-```
-
+``` 
+````
 ---
 
 # R Markdown
@@ -147,7 +145,7 @@ We can use [R Markdown](http://r4ds.had.co.nz/r-markdown.html) documents.
 3. As an environment in which to do data science, as a modern day lab **notebook** where you can capture not only what you did, but also what you were thinking.
 ---
 
-## Opening an R Markdown .Rmd
+## Opening and knitting an R Markdown .Rmd
 
 Open `File -> New File -> R Markdown`.  
 
@@ -182,18 +180,18 @@ We will all work from a personal copy of these slides, accessed from GitHub. Del
 
 Google `github r-ladiesakl`   
 
-Go to the **meetup-presentations_auckland** in pinned repositories ->  **2018-08_Intro_to_R.Rmd** -> **Raw** button 
+Go to the **meetup-presentations_auckland** in pinned repositories  
+->  **2018-08_Intro_to_R.Rmd**  
+-> **Raw** button 
 --
 
 ### or Navigate directly to this link
-https://github.com/R-LadiesAKL/meetup-presentations_auckland
+https://github.com/R-LadiesAKL/meetup-presentations_auckland/blob/master/2018-08_Intro_to_R_Notes.Rmd  
+
 --
 
-## Knit the document
+Select all, copy and paste the text into your .Rmd file. and `knit`.
 
-Copy and paste the text into your .Rmd file. and `knit`.
-
-This creates a pop out window, but we can also view these notes in the Viewer pane.
 
 
 ---
@@ -201,7 +199,7 @@ This creates a pop out window, but we can also view these notes in the Viewer pa
 
 # Survival tips
 
-- Modern day coding practice comprises almost entirely searching "how do I do `<x>` in `<language>`".
+- Modern day coding practice comprises almost entirely searching "how do I do `x` in `language`".
 - The [community](https://community.rstudio.com/) is one of your best resources; talk to each other and make friends and future collaborators.  
 - Type `?function` into the RStudio Console, and the Help pane will display documentation. 
 - Cheatsheets online or in R-Studio Help menu
@@ -215,19 +213,20 @@ This creates a pop out window, but we can also view these notes in the Viewer pa
 class: inverse, center, middle
 # Your turn to work through the rest of this tutorial
 
+
 ---
 
-# Data Structure Types
+# Data Structure Types in R
 
-![](http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png);<sup>2</sup>
+![](http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png) <sup>2</sup>
 
 
-`Vectors`: one-dimensional arrays used to store collection data of the same mode
-`Matrices`: two-dimensional arrays to store collections of data of the same mode. They are accessed by two integer indices.
-`Arrays`: similar to matrices but they can be multi-dimensional (more than two dimensions)
-`Factors`: vectors of categorical variables designed to group the components of another vector with the same size
+`Vectors`: one-dimensional arrays used to store data of the same type
+`Matrices`: two-dimensional arrays to store data of the same type
+`Arrays`: similar to matrices but they can be multi-dimensional
+`Factors`: vectors of grouped categorical variables 
 `Lists`: ordered collection of objects, where the elements can be of different types
-`Data Frames`: generalization of matrices where different columns can store different mode data.
+`Data Frames`: generalization of matrices where different columns can store different data types
 
 .footnote[
 [2]  [First Steps in R](http://venus.ifca.unican.es/Rintro/dataStruct.html#data-structure-types)
@@ -260,10 +259,10 @@ We will use functions to intall and load the `tidyverse`.
 We want to install the package `tidyverse`.
 
 ### For installation; i.e., first time only.
-`install.packages("<name of package>")`
+`install.packages("name of package")`
  
 ### For loading.
-`library(<name of package>)`
+`library(name of package)`
 
 ### Let's install and load the tidyverse 
 
@@ -308,7 +307,7 @@ Let's explore the information in this table.
 
 Lots of objects in R `<an R object>` are friendly to the `summary(<an R object>)` function. 
 
-What's is the output of `summary` for `eventdat`?
+What's is the output of `summary()` using object `eventdat`?
 
 ### An alternative to `summary`
 
@@ -330,17 +329,17 @@ To do this, we'll learn a very useful operator, the pipe `%>%`.
 
 Piping makes code easier to read (arguably).  
 
-The `head()` function takes one argument, a table: 
+The `head()` function takes one argument, an object called <some data>: 
 
 ```{}
-head(<data>) 
+head(<some data>) 
 ```
 
 But we could also *pipe* `%>%` the data into the function.
 
 ```{}
 # Use the pipe function to present the top of the `eventdat` dataset.
-<data> %>% head() 
+<some data> %>% head() 
 ```
 
  
@@ -352,52 +351,53 @@ But we could also *pipe* `%>%` the data into the function.
 
 ## The structure of a ggplot
 
-The tidy way of plotting data is with the `ggplot2` package, which comes with the `tidyverse`.
+One R method of plotting data is with the `ggplot2` package, which comes with the `tidyverse`.
 
-What happens when you `%>%` the `eventdat` table into `ggplot()`?
 
 ## Aesthetics
 
 We define x and y axes of the plot with aesthetics in `ggplot`.
 
-```{}
+```{ }
 <some data> %>% 
   ggplot(aes(x = <column1>, y = <column2>))
 ```
 
-What happens if you set x and y axes to column names in `aes`? 
 ---
+
 ## Your  first ggplot
 
-In your **dataframe** chose two variables to plot **column1** and ** column2**.
+In your **dataframe** chose two `numeric` variables to plot **column1** and ** column2**.
 
 We'll add a plot layer `+` to our ggplot using `geom_point` for a scatterplot. 
 
 Set the x axis to **column1** and the y axis to **column2**.
 
+
+What happens when you `%>%` the `eventdat` table into `ggplot()`?
+
 ```{}
- dataframe> %>% 
+dataframe %>% 
   ggplot(aes(x =  column1, y =  column2)) +
   geom_point() # Adds a scatterplot.
 ```
 
- 
 ---
-# Extension tutorials
+
+# Tutorials
 
 In groups or alone, choose a tutorial to follow:
 
-Introduction to R 
+Further Introduction to R :
 - [DataCamp basics](https://www.datacamp.com/courses/free-introduction-to-r%20)
 
-Data wrangling
-- [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
 
-From Excel to R using the Summer of Tech data
--
+From Excel background  to R :
+- [Using the Summer of Tech data](https://github.com/kimnewzealand/R-tutorials/blob/master/from-excel-tutorial-sotdata.Rmd)
 
-Visualisation
+Further Visualisation :
 - [ggplot2](https://ggplot2.tidyverse.org/)
+
 ---
 
 
