@@ -4,8 +4,8 @@ R-Ladies Auckland Events in 2017-2018
 -----------------------------------------------------------------------------------------------
 
 
-[Launch Meetup](https://github.com/R-LadiesAKL/meetup-presentations_auckland/blob/master/R-Ladies%20Auckland%20Launch.pptx)
- and [Data science in the Tidyverse](https://github.com/R-LadiesAKL/meetup-presentations_auckland/blob/master/tidyverse-6-auckland.pdf)  
+[Launch Meetup](https://github.com/R-LadiesAKL/meetup-presentations_auckland/2017-12_R-Ladies Auckland Launch.pptx)
+ and [Data science in the Tidyverse](https://github.com/R-LadiesAKL/meetup-presentations_auckland/2017-12_tidyverse-6-auckland.pdf)  
  
 
 Date: 7 December 2017  
@@ -43,6 +43,14 @@ Speaker: [Emma Vitz](https://www.meetup.com/rladies-auckland/events/248941990/)
 
 Date 22 May 2018  
 Speaker: [Liza Bolton](https://www.meetup.com/rladies-auckland/events/250117268/)
+
+-----------------------------------------------------------------------------------------------
+
+[Dataviz with Summer of Tech - collaberative project](https://github.com/R-LadiesAKL/sotdata)  
+
+
+Date 12 June 2018  
+[Meetup](https://www.meetup.com/rladies-auckland/events/251632320/)
 
 -----------------------------------------------------------------------------------------------
 

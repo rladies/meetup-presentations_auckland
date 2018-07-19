@@ -1,0 +1,16 @@
+---
+title: "Harry Potter and the Rvest of Fanfiction"
+author: "Liza Bolton"
+output: html_document
+---
+# Harry Potter and the Rvest of Fanfiction
+
+This was the [May 22, 2018 R-Ladies Auckland meetup](https://www.meetup.com/rladies-auckland/events/250117268/).
+
+This workshop introduced web scraping in R through the rvest package, as well as some basics of ethics/things to check before scraping, and basic ideas regarding URLs, HTML and CSS. The example was based on scraping Harry Potter fanfiction because that was how this all started for me - needing a dataset to write a statistics exam for my students. 
+
+**[Slides here](https://docs.google.com/presentation/d/1pjJZY8E5z-0dR4_HULRLeat3WVySbJJ8-aLAirV9fYo/edit?usp=sharing)**.
+
+**More information on this talk in the [notes for the talk](http://www.dataembassy.co.nz/links)**.
+
+Hit me up on [Twitter](https://www.twitter.com/Liza_Bolton) if you have any questions or feedback.
