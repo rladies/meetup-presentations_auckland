@@ -1,16 +1,25 @@
----
-title: "Intro to R"
-author: "Kim Fitter - R-Ladies Auckland"
-subtitle:  
-date: "2018/08/01"
-output:
-  xaringan::moon_reader:
-    css: ["default", "rladies", "rladies-fonts"]
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to R</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Kim Fitter - R-Ladies Auckland" />
+    <link href="2018-08_Intro_to_R_Pres_files/remark-css/default.css" rel="stylesheet" />
+    <link href="2018-08_Intro_to_R_Pres_files/remark-css/rladies.css" rel="stylesheet" />
+    <link href="2018-08_Intro_to_R_Pres_files/remark-css/rladies-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Intro to R
+### Kim Fitter - R-Ladies Auckland
+### 2018/08/01
+
 ---
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-```
+
+
 
 
 ## Welcome
@@ -32,27 +41,27 @@ class: inverse, center, middle
 --
 This workshop involves my facilitating set up then coding tutorials with help from our mentors with stickynote signalling
 
-<center>
+&lt;center&gt;
 I got this
-</center>
-<center><img src="http://www.clker.com/cliparts/l/h/S/H/r/1/yellow-sticky-note-md.png" style="width: 100px; height:100px"  />
+&lt;/center&gt;
+&lt;center&gt;&lt;img src="http://www.clker.com/cliparts/l/h/S/H/r/1/yellow-sticky-note-md.png" style="width: 100px; height:100px"  /&gt;
 
-</center>
+&lt;/center&gt;
 
 --
 
-<center>
+&lt;center&gt;
 
 or
 
-</center>
+&lt;/center&gt;
 
-<center><img src="http://www.clker.com/cliparts/G/o/J/s/i/a/pink-sticky-note-md.png" style="width: 100px; height:100px"  /> 
-</center>
+&lt;center&gt;&lt;img src="http://www.clker.com/cliparts/G/o/J/s/i/a/pink-sticky-note-md.png" style="width: 100px; height:100px"  /&gt; 
+&lt;/center&gt;
 
-<center>
-<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width: 400px; height:200px" />
-</center>
+&lt;center&gt;
+&lt;img src="https://memegenerator.net/img/instances/71995321.jpg" style="width: 400px; height:200px" /&gt;
+&lt;/center&gt;
 
 ---
 
@@ -64,9 +73,9 @@ class: inverse, center, middle
 
 ## What do R-users use R for?
 
-A typical data science project looks something like this workflow;<sup>1</sup>
+A typical data science project looks something like this workflow;&lt;sup&gt;1&lt;/sup&gt;
 
-<center> <img src="http://r4ds.had.co.nz/diagrams/data-science.png" </center>
+&lt;center&gt; &lt;img src="http://r4ds.had.co.nz/diagrams/data-science.png" &lt;/center&gt;
 
 
 --
@@ -100,7 +109,7 @@ Let's start with a couple useful panes.
 - Environment, History
 - Files, Plots, Packages, Help, Viewer
 
-If this doesn't look like you, then go to the RStudio menu    `Tools -> Global Options  -> Pane Layout` update and Apply  
+If this doesn't look like you, then go to the RStudio menu    `Tools -&gt; Global Options  -&gt; Pane Layout` update and Apply  
 
 ---
 
@@ -115,10 +124,11 @@ The console is located, by default, in the lower left pane.
 Try `3 + 2` and `Enter`.  
 --
 
-Assign the number 5 to an object `x` with arrow assignment `<-`.  
+Assign the number 5 to an object `x` with arrow assignment `&lt;-`.  
 
-```{r eval=FALSE}
-x <- 3 + 2
+
+```r
+x &lt;- 3 + 2
 ```
 
 --
@@ -130,10 +140,10 @@ What happens when you type `x` into the Console after assigning the value 5 to i
 ## Running code in code chunks
 
 ````
-```{ }`r ''`
+```{ }
 # Here's a code chunk. 
 # Assign 10 to y. Run this line of code using Ctrl+Enter 
-y <- 10
+y &lt;- 10
 ``` 
 ````
 ---
@@ -144,9 +154,9 @@ y <- 10
 
 We can use [R Markdown](http://r4ds.had.co.nz/r-markdown.html) documents (instead of R scripts)
 
-> R Markdown provides an unified authoring framework for data science, combining your code, its results, and your prose commentary. R Markdown documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more.
+&gt; R Markdown provides an unified authoring framework for data science, combining your code, its results, and your prose commentary. R Markdown documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more.
 
-> R Markdown files are designed to be used in three ways:
+&gt; R Markdown files are designed to be used in three ways:
 
 1. For **communicating** to decision makers, who want to focus on the conclusions, not the code behind the analysis.
 
@@ -157,7 +167,7 @@ We can use [R Markdown](http://r4ds.had.co.nz/r-markdown.html) documents (instea
 
 ## Opening and knitting an R Markdown .Rmd
 
-Open `File -> New File -> R Markdown`.  
+Open `File -&gt; New File -&gt; R Markdown`.  
 
 --
 
@@ -191,8 +201,8 @@ We will all work from a personal copy of these slides, accessed from GitHub. Del
 Google `github r-ladiesakl`   
 
 Go to the **meetup-presentations_auckland** in pinned repositories  
-->  **2018-08_Intro_to_R_Notes.Rmd**  
--> **Raw** button 
+-&gt;  **2018-08_Intro_to_R_Notes.Rmd**  
+-&gt; **Raw** button 
 --
 
 ### or Navigate directly to this link
@@ -216,7 +226,7 @@ Select all, copy and paste the text into your .Rmd file. and `knit`.
 - Twitter
 - stackoverflow
 
-<center> ![](https://i.gifer.com/1tUl.gif)
+&lt;center&gt; ![](https://i.gifer.com/1tUl.gif)
 
 ---
 
@@ -228,7 +238,7 @@ class: inverse, center, middle
 
 # Data Structure Types in R
 
-<img src="http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png" style="width:60%" /) <sup>2</sup>
+&lt;img src="http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png" style="width:60%" /) &lt;sup&gt;2&lt;/sup&gt;
 
 
 `Vectors`: one-dimensional arrays used to store data of the same type  
@@ -278,7 +288,8 @@ We want to install the package `tidyverse`.
 
 ### Let's install and load the tidyverse 
 
-```{r Load the tidyverse package}
+
+```r
 # This is a code chunk. 
 # We can write informative comments with a hash # at the start.
 # Install the tidyverse using the install.packages() function.
@@ -305,7 +316,7 @@ Try importing the data at the console with `read_csv` with the URL including the
 
 `read_csv` with the argument url produces a data object. An object we can assign.
 
-Open a code chunk *here* and read the data in using `read_csv` and assign `<-` the data to an object called `eventdat`.
+Open a code chunk *here* and read the data in using `read_csv` and assign `&lt;-` the data to an object called `eventdat`.
 
 - **control+alt+i** to open a code chunk. 
 - press green **play** to run chunk.
@@ -317,7 +328,7 @@ Let's explore the information in this table.
 
 ## Summary functions
 
-Lots of objects in R `<an R object>` are friendly to the `summary(<an R object>)` function. 
+Lots of objects in R `&lt;an R object&gt;` are friendly to the `summary(&lt;an R object&gt;)` function. 
 
 What's is the output of `summary()` using object `eventdat`?
 
@@ -336,22 +347,22 @@ What is the difference between the output of `summary` and `skim`? Which do you 
 
 At this point, we often wish to manipulate the data in some way. This is variously known as wrangling, cleaning, and scrubbing.
 
-To do this, we'll learn a very useful operator, the pipe `%>%`. 
+To do this, we'll learn a very useful operator, the pipe `%&gt;%`. 
 ## The pipe
 
 Piping makes code easier to read (arguably).  
 
-The `head()` function takes one argument, an object called <some data>: 
+The `head()` function takes one argument, an object called &lt;some data&gt;: 
 
 ```{}
-head(<some data>) 
+head(&lt;some data&gt;) 
 ```
 
-But we could also *pipe* `%>%` the data into the function.
+But we could also *pipe* `%&gt;%` the data into the function.
 
 ```{}
 # Use the pipe function to present the top of the `eventdat` dataset.
-<some data> %>% head() 
+&lt;some data&gt; %&gt;% head() 
 ```
 
  
@@ -371,8 +382,8 @@ One R method of plotting data is with the `ggplot2` package, which comes with th
 We define x and y axes of the plot with aesthetics in `ggplot`.
 
 ```{}
-<some data> %>% 
-  ggplot(aes(x = <column1>, y = <column2>))
+&lt;some data&gt; %&gt;% 
+  ggplot(aes(x = &lt;column1&gt;, y = &lt;column2&gt;))
 ```
 
 ---
@@ -386,10 +397,10 @@ We'll add a plot layer `+` to our ggplot using `geom_point` for a scatterplot.
 Set the x axis to **column1** and the y axis to **column2**.
 
 
-What happens when you `%>%` the `eventdat` table into `ggplot()`?
+What happens when you `%&gt;%` the `eventdat` table into `ggplot()`?
 
 ```{}
-dataframe %>% 
+dataframe %&gt;% 
   ggplot(aes(x =  column1, y =  column2)) +
   geom_point() # Adds a scatterplot.
 ```
@@ -418,8 +429,47 @@ Further Visualisation :
 - The installation instructions are [adapted from a previous workshop](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd). 
 - [R-Ladies presentation ninja template](https://alison.rbind.io/post/r-ladies-slides/)
 - This workshop was adapted and shortened from an R-Ladies [useR! 2018 R-Curious workshop](https://github.com/softloud/rcurious). The [video](https://youtu.be/AmqxVDlfKQY) is highly recommended.
- 
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
 
-
-
-
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
