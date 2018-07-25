@@ -4,7 +4,7 @@ R-Ladies Auckland Events in 2017-2018
 -----------------------------------------------------------------------------------------------
 
 
-[Launch Meetup](https://github.com/R-LadiesAKL/meetup-presentations_auckland/2017-12_R-Ladies Auckland_Launch.pptx)
+[Launch Meetup](https://github.com/R-LadiesAKL/meetup-presentations_auckland/2017-12_R-Ladies_Auckland_Launch.pptx)
  and [Data science in the Tidyverse](https://github.com/R-LadiesAKL/meetup-presentations_auckland/2017-12_tidyverse-6-auckland.pdf)  
  
 
