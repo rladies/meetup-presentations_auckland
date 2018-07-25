@@ -1,6 +1,6 @@
 ---
 title: "Intro to R"
-author: "This workshop is brought to you by R-Ladies Auckland"
+author: "Kim Fitter - R-Ladies Auckland"
 subtitle:  
 date: "2018/08/01"
 output:
@@ -30,43 +30,53 @@ class: inverse, center, middle
 # What is the format of this workshop?
 
 --
-### This workshop involves coding tutorials with help from our mentors with stickynote signalling
-
+This workshop involves my facilitating set up then coding tutorials with help from our mentors with stickynote signalling
 
 <center>
-<h3><span style="color:yellow ... ">yellow</span> I got this
+I got this
+</center>
+<center><img src="http://www.clker.com/cliparts/l/h/S/H/r/1/yellow-sticky-note-md.png" style="width: 100px; height:100px"  />
+
 </center>
 
 --
 
+<center>
+
 or
 
-<center><h3><span style="color:pink ... ">pink</center>
+</center>
 
-<center><img src="https://memegenerator.net/img/instances/71995321.jpg" style="width:70%">
+<center><img src="http://www.clker.com/cliparts/G/o/J/s/i/a/pink-sticky-note-md.png" style="width: 100px; height:100px"  /> 
+</center>
+
+<center>
+<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width: 400px; height:200px" />
 </center>
 
 ---
+
 class: inverse, center, middle
 
 # Introduce yourselves - a sentence with your name and background
+
 ---
 
 ## What do R-users use R for?
 
 A typical data science project looks something like this workflow;<sup>1</sup>
 
-<center> ![](http://r4ds.had.co.nz/diagrams/data-science.png) </center>
-
+<center> <img src="http://r4ds.had.co.nz/diagrams/data-science.png"> </center>
 
 
 --
 
+
 ### Why use R and Rstudio ?
 
-- R was intentionally developed to be a data analysis language 
-- R is free and open source
-- RStudio is an [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment) designed to help users use R 
+- R was intentionally developed to be a data analysis language  
+- R is free and open source  
+- RStudio is an [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment) designed to help users use R   
 
 .footnote[
 [1]  [R for Data Science](http://r4ds.had.co.nz/), a great free ebook.]
@@ -132,7 +142,7 @@ y <- 10
 
 ## So far we have run some code, but how do we save it?
 
-We can use [R Markdown](http://r4ds.had.co.nz/r-markdown.html) documents.
+We can use [R Markdown](http://r4ds.had.co.nz/r-markdown.html) documents (instead of R scripts)
 
 > R Markdown provides an unified authoring framework for data science, combining your code, its results, and your prose commentary. R Markdown documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more.
 
@@ -181,7 +191,7 @@ We will all work from a personal copy of these slides, accessed from GitHub. Del
 Google `github r-ladiesakl`   
 
 Go to the **meetup-presentations_auckland** in pinned repositories  
-->  **2018-08_Intro_to_R.Rmd**  
+->  **2018-08_Intro_to_R_Notes.Rmd**  
 -> **Raw** button 
 --
 
@@ -206,7 +216,7 @@ Select all, copy and paste the text into your .Rmd file. and `knit`.
 - Twitter
 - stackoverflow
 
-<center> ![](https://i.gifer.com/1tUl.gif)
+<center> ![](https://i.gifer.com/1tUl.gif) </center> 
 
 ---
 
@@ -218,18 +228,20 @@ class: inverse, center, middle
 
 # Data Structure Types in R
 
-![](http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png) <sup>2</sup>
+<img src="http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png" style="width:60%" /) <sup>2</sup>
 
 
-`Vectors`: one-dimensional arrays used to store data of the same type
-`Matrices`: two-dimensional arrays to store data of the same type
-`Arrays`: similar to matrices but they can be multi-dimensional
-`Factors`: vectors of grouped categorical variables 
-`Lists`: ordered collection of objects, where the elements can be of different types
-`Data Frames`: generalization of matrices where different columns can store different data types
+`Vectors`: one-dimensional arrays used to store data of the same type  
+`Matrices`: two-dimensional arrays to store data of the same type  
+`Arrays`: similar to matrices but they can be multi-dimensional  
+`Factors`: vectors of grouped categorical variables   
+`Lists`: ordered collection of objects, where the elements can be of different types  
+`Data Frames`: generalization of matrices where different columns can store different data types   
 
 .footnote[
-[2]  [First Steps in R](http://venus.ifca.unican.es/Rintro/dataStruct.html#data-structure-types)
+[2]  [First Steps in R](http://venus.ifca.unican.es/Rintro/dataStruct.html#data-structure-types)]
+
+
 
 ---
 
@@ -358,7 +370,7 @@ One R method of plotting data is with the `ggplot2` package, which comes with th
 
 We define x and y axes of the plot with aesthetics in `ggplot`.
 
-```{ }
+```{}
 <some data> %>% 
   ggplot(aes(x = <column1>, y = <column2>))
 ```
@@ -403,9 +415,9 @@ Further Visualisation :
 
 # Acknowledgements
 
-- The installation instructions are [adapted from a previous workshop](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd).  
+- The installation instructions are [adapted from a previous workshop](https://github.com/rladies/meetup-presentations_london/blob/master/2016-04_Beginners_DropIn/April_DropIn.Rmd). 
 - [R-Ladies presentation ninja template](https://alison.rbind.io/post/r-ladies-slides/)
-- This workshop was adapted and shortened from an R-Ladies [useR! 2018 R-Curious workshop](https://github.com/softloud/rcurious).
+- This workshop was adapted and shortened from an R-Ladies [useR! 2018 R-Curious workshop](https://github.com/softloud/rcurious). The [video](https://youtu.be/AmqxVDlfKQY) is highly recommended.
  
 
 
