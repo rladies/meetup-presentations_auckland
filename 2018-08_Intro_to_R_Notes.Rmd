@@ -173,7 +173,7 @@ Select all, copy and paste the text into your .Rmd file. and `knit`.
 - Twitter
 - stackoverflow
 
-<center> ![](https://i.gifer.com/1tUl.gif) </center> 
+<center> <img src="https://i.gifer.com/1tUl.gif"> </center> 
 
  
 
