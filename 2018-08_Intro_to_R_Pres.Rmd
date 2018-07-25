@@ -66,7 +66,7 @@ class: inverse, center, middle
 
 A typical data science project looks something like this workflow;<sup>1</sup>
 
-<center> <img src="http://r4ds.had.co.nz/diagrams/data-science.png" </center>
+<center> <img src="http://r4ds.had.co.nz/diagrams/data-science.png"> </center>
 
 
 --
@@ -74,9 +74,9 @@ A typical data science project looks something like this workflow;<sup>1</sup>
 
 ### Why use R and Rstudio ?
 
-R was intentionally developed to be a data analysis language  
-R is free and open source  
-RStudio is an [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment) designed to help users use R   
+- R was intentionally developed to be a data analysis language  
+- R is free and open source  
+- RStudio is an [Integrated development environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment) designed to help users use R   
 
 .footnote[
 [1]  [R for Data Science](http://r4ds.had.co.nz/), a great free ebook.]
@@ -216,7 +216,7 @@ Select all, copy and paste the text into your .Rmd file. and `knit`.
 - Twitter
 - stackoverflow
 
-<center> ![](https://i.gifer.com/1tUl.gif)
+<center> ![](https://i.gifer.com/1tUl.gif) </center> 
 
 ---
 
