@@ -1,7 +1,7 @@
 ---
 title: "Intro to R"
-author: "Kim Fitter - R-Ladies Auckland"
-subtitle:  
+author: "Kim Fitter @kim_fitter "
+subtitle:  "R-Ladies Auckland"
 date: "2018/08/01"
 output:
   xaringan::moon_reader:
@@ -13,29 +13,19 @@ options(htmltools.dir.version = FALSE)
 ```
 
 
-## Welcome
-
-Follow us on twitter!  
-
-[@RLadiesAKL](https://twitter.com/RLadiesAKL) 
-
-[@RLadiesGlobal](https://twitter.com/RLadiesGlobal)
----
-class: inverse, center, middle
-# Thanks
-
-## A huge thanks to Xero for hosting and providing the catering!
----
-
 # What is the format of this workshop?
 
 --
-This workshop involves my facilitating set up then coding tutorials with help from our mentors with stickynote signalling
+`6:00` - Welcome and R set up  
+`6:30` - Coding tutorials in pairs/teams with help from our mentors and stickynote signalling  
+`7:30` - Short presentations
+
+--
 
 <center>
 I got this
 </center>
-<center><img src="http://www.clker.com/cliparts/l/h/S/H/r/1/yellow-sticky-note-md.png" style="width: 100px; height:100px"  />
+<center><img src="http://www.clker.com/cliparts/l/h/S/H/r/1/yellow-sticky-note-md.png" style="width: 90px; height:90px"  />
 
 </center>
 
@@ -47,22 +37,43 @@ or
 
 </center>
 
-<center><img src="http://www.clker.com/cliparts/G/o/J/s/i/a/pink-sticky-note-md.png" style="width: 100px; height:100px"  /> 
+<center><img src="http://www.clker.com/cliparts/G/o/J/s/i/a/pink-sticky-note-md.png" style="width: 90px; height:90px"  /> 
 </center>
 
 <center>
-<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width: 400px; height:200px" />
+<img src="https://memegenerator.net/img/instances/71995321.jpg" style="width: 300px; height:150px" />
 </center>
 
 ---
 
-class: inverse, center, middle
+## Welcome
 
-# Introduce yourselves - a sentence with your name and background
+Follow us on twitter!  
+
+[@RLadiesAKL](https://twitter.com/RLadiesAKL) 
+
+[@RLadiesGlobal](https://twitter.com/RLadiesGlobal)
+
+--
+
+## Notices
+
+Next R-Ladies Auckland meetup  
+
+**Maps in R**
+
+Date: Wednesday 12th September  
+Venue: AUT
 
 ---
+class: inverse, center, middle
+# Thanks
 
-## What do R-users use R for?
+## A huge thanks to Xero for hosting and providing the catering!
+---
+
+
+## Why use R and Rstudio ?
 
 A typical data science project looks something like this workflow;<sup>1</sup>
 
@@ -70,9 +81,7 @@ A typical data science project looks something like this workflow;<sup>1</sup>
 
 
 --
-
-
-### Why use R and Rstudio ?
+ 
 
 - R was intentionally developed to be a data analysis language  
 - R is free and open source  
@@ -102,6 +111,15 @@ Let's start with a couple useful panes.
 
 If this doesn't look like you, then go to the RStudio menu    `Tools -> Global Options  -> Pane Layout` update and Apply  
 
+---
+
+class: inverse, center, middle
+
+# Introduce yourselves - a sentence with your name and what you would like to learn 
+
+The basics of R code  
+Excel things in R  
+Data visualisation  
 ---
 
 # How to run code?!
@@ -214,14 +232,14 @@ Select all, copy and paste the text into your .Rmd file. and `knit`.
 - Type `?function` into the RStudio Console, and the Help pane will display documentation. 
 - Cheatsheets online or in R-Studio Help menu
 - Twitter
-- stackoverflow
+- Online forums such as stackoverflow
 
 <center> <img src="https://i.gifer.com/1tUl.gif"> </center>
 
 ---
 
 class: inverse, center, middle
-# Your turn to work through the rest of this tutorial
+# Your turn to work through the rest of this tutorial and optional extra tutorials at the end
 
 
 ---
