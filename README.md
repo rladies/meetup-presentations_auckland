@@ -62,7 +62,7 @@ Workshop facilitator: [Kim Fitter](https://www.meetup.com/rladies-auckland/event
 
 -----------------------------------------------------------------------------------------------
 
-[Creating Maps in R](https://github.com/R-LadiesAKL/meetup-presentations_auckland/tree/master/2018-09_creating_maps  
+[Creating Maps in R](https://github.com/R-LadiesAKL/meetup-presentations_auckland/tree/master/2018-09_creating_maps)
 
 
 Date 12 September 2018  
