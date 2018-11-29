@@ -70,7 +70,7 @@ Speaker: [Sarah Marshall](https://www.meetup.com/rladies-auckland/events/2536273
 
 -----------------------------------------------------------------------------------------------
 
-[The power of pixels: Using R to explore and exploit features of images](https://annafergusson.github.io/powerpixels/index.html)   and [here](https://github.com/R-LadiesAKL/meetup-presentations_auckland/tree/master/2018-10_powerpixels)
+[The power of pixels: Using R to explore and exploit features of images](https://annafergusson.github.io/powerpixels/index.html)   and [here](https://github.com/rladies/meetup-presentations_auckland/tree/master/2018-10_powerpixels)
 
 
 Date 18 October 2018  
@@ -78,7 +78,7 @@ Speaker: [Anna Fergusson](https://www.meetup.com/rladies-auckland/events/2551129
 
 -----------------------------------------------------------------------------------------------
 
-[Telling Stories with Data](https://github.com/R-LadiesAKL/meetup-presentations_auckland/tree/master/2018-11_telling_stories)
+[Telling Stories with Data](https://github.com/rladies/meetup-presentations_auckland/tree/master/2018-11_telling_stories)
 
 
 Date 29 November 2018  
