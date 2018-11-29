@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539051465518.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "692136595",
+    "id" : "7B85E522",
+    "lastKnownWriteTime" : 1539049661,
+    "last_content_update" : 1539049661,
+    "path" : "~/learning-r-journalism/humanities-original/.Rhistory",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "512,0",
+        "scrollLine" : "434"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_history"
+}

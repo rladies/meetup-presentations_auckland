@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539115324875.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3530009712",
+    "id" : "F797D4E",
+    "lastKnownWriteTime" : 1539120341,
+    "last_content_update" : 1539120290896,
+    "path" : "~/R projects/humanities/01-humanities-analysis.Rmd",
+    "project_path" : "01-humanities-analysis.Rmd",
+    "properties" : {
+        "cursorPosition" : "6,12",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

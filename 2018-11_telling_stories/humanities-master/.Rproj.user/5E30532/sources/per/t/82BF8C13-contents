@@ -1,0 +1,180 @@
+---
+title: "Mapping NYC rodent sightings"
+author: "Kate Newton"
+date: "31 August 2018"
+output: 
+  html_document:
+    toc: true
+    toc_flot: true
+---
+# Load libraries
+
+```{r load libraries, warning=F, message=F}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(stringr)
+```
+
+# Import rodent data
+
+Import New York City data on rodent-related 311 complaints between 2010 and August 2018.
+The full data is available at the following link but is a 20GB file, so the zipped file is data downloaded after applying a 'Complaint Type' filter for 'Rodent'
+https://nycopendata.socrata.com/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
+
+```{r import, warning=F, message=F}
+unzip("Service_Requests_from_2010_to_Present_rodents.zip", "Service_Requests_from_2010_to_Present_rodents.csv")
+
+complaints <- read.csv("Service_Requests_from_2010_to_Present_rodents.csv", stringsAsFactors = F)
+```
+
+# Import geographic data
+
+```{r geo libraries, warning=F, message=F}
+library(sf)
+library(censusapi)
+library(tigris)
+options(tigris_class = "sf")
+```
+
+Creating two geographic dataframes - one just for New York and the other for all five boroughs.
+Final visualisations for this project focused on Manhattan but code supplied for both options.
+
+```{r geo data import, warning=F, message=F}
+
+nyc <- tracts(state = "NY", county = "New York", cb=T)
+
+five_boroughs <- rbind_tigris(
+  tracts(state = "NY", county = "New York", cb = TRUE), 
+  tracts(state = "NY", county = "Kings", cb = TRUE), 
+  tracts(state = "NY", county = "Bronx", cb = TRUE), 
+  tracts(state = "NY", county = "Richmond", cb = TRUE), 
+  tracts(state = "NY", county = "Queens", cb = TRUE))
+```
+
+# Cleaning dataframe containing 311 data
+
+```{r clean data}
+rodents <- complaints %>% 
+  select(Unique.Key, Created.Date, Descriptor, Location.Type, Incident.Zip, 
+         Incident.Address, Street.Name, City, BBL, Borough, Latitude, 
+         Longitude, Location) %>% 
+  filter(Descriptor %in% c("Rat Sighting", "Mouse Sighting"))
+```
+
+Get rid of any NAs in the Longitude and Latitude columns so it doesn't throw errors when doing spatial joins later
+
+```{r Removing NAs, warning=F, message=F}
+
+rodents_complete <- rodents[complete.cases(rodents[ , 11:12]),]
+```
+
+```{r tidy dates, warning=F, message=F}
+# Tidy up date information (not used in final visualisation)
+
+rodents_complete$date <- mdy_hms(rodents_complete$Created.Date)
+rodents_complete$year <- year(rodents_complete$date)
+```
+
+# Charting rodent sightings by borough
+First remove any sightings where the borough is listed as 'Unspecified' and then group by borough to get the total.
+
+```{r group_by borough}
+rodents_boroughs <- rodents_complete %>% 
+  filter(Borough!="Unspecified") %>% 
+  group_by(Borough) %>% 
+  summarize(total=n())
+```
+
+Next, chart by borough, with browns and grays for the bars to keep with the rodent theme
+
+```{r rodents chart}
+ggplot(rodents_boroughs, aes(x=Borough, y=total, fill=Borough)) + 
+  geom_bar(stat="identity") + 
+  scale_fill_manual("Borough", 
+                    values = c("BRONX" = "peachpuff4", "BROOKLYN" = "snow4", "MANHATTAN" = "bisque4", 
+                               "QUEENS" = "darkgrey", "STATEN ISLAND" = "grey23")) + 
+  theme_minimal() + 
+  labs(x="Borough", y="Total sightings", 
+       title = "Rodent sightings in New York's five boroughs", 
+       subtitle = "2010 to 2018", 
+       caption = "Data from nyc.gov")
+```
+
+# Create spatial data for mapping
+
+```{r spatial data, warning=F, message=F}
+# Add spatial data to dataframe
+rodents_spatial <- rodents_complete %>% st_as_sf(coords=c("Longitude", "Latitude"), 
+                            crs = "+proj=longlat") %>% 
+  st_transform(crs=st_crs(five_boroughs))
+```
+
+```{r assign points}
+# Map points to Census tracts
+
+rodent_points <- st_join(five_boroughs, rodents_spatial, left=T)
+
+manhattan_points <- st_join(nyc, rodents_spatial, left=T)
+```
+
+```{r summarise, warning=F, message=F}
+# Create summarised data to map 
+
+rodent_tracts <- rodent_points %>% 
+  group_by(GEOID) %>%
+  summarise(total=n())
+
+manhattan_tracts <- manhattan_points %>% 
+  group_by(GEOID) %>%
+  summarise(total=n())
+```
+
+# Create geographic data for map border
+
+```{r border, warning=F, message=F}
+
+boroughs <- counties(state="NY", cb=T)
+
+borough_borders <- filter(boroughs, NAME %in% c("New York", "Kings", "Bronx", "Richmond", "Queens"))
+manhattan_border <- filter(boroughs, NAME=="New York")
+```
+
+# Where is Pizza Rat?
+
+Okay, okay, so this isn't in the data, but just for fun I decided to map Pizza Rat, of internet meme fame. He was spotted in 2015 in the 1st Ave subway station in East Village, so I made him his own mini dataframe.
+
+```{r pizza rat, warning=F, message=F}
+
+pizza_rat <- data.frame(name = "Pizza Rat (2015)", Longitude = -73.982272, Latitude = 40.732955)
+```
+
+# Mapping the data
+
+You can create various iterations of this map, faceted by year etc, but this particular code creates a choropleth of all rodent sightings in Manhattan between 2010 and 2018.
+
+It's got a custom rodent-coloured colour palette and an arrow marker and label for Pizza Rat (mapped as a single dot point in a separate layer).
+
+The colour scale is set with the maximum just above the maximum total sightings for an individual Census tract (found using `max(manhattan_tracts$total)`) and the midpoint halfway between that and zero.
+
+```{r mapping, warning=F, message=F}
+ggplot(manhattan_tracts) +
+  geom_sf(aes(fill = total), color=NA) +
+  coord_sf(datum=NA) + 
+  geom_sf(data=manhattan_border, fill=NA, color="black") + 
+  labs(title = "Rodent sightings in Manhattan", 
+       subtitle = "2010 to 2018", 
+       caption = "Source: nyc.gov",
+       fill = "Total sightings") +
+  scale_fill_gradient2(low = "snow1", mid = "rosybrown4",
+                       high = "grey24", midpoint=350, limits=c(0, 700)) + 
+  geom_point(data=pizza_rat, aes(x=Longitude, y=Latitude), color="orange", size=4) + 
+  annotate("text", x=-73.93, y=40.73, label="Pizza Rat (2015)", size=4) + 
+  annotate("segment", x=-73.95, xend=-73.978, y=40.73, yend=40.733, 
+           colour = "black", size=0.5, alpha=0.6, 
+           arrow=arrow(length=unit(0.2, "cm"), type="closed")) + 
+  theme_void() + 
+  theme(panel.grid.major = element_line(colour = 'transparent'))
+```
+
