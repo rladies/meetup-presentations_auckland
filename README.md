@@ -46,7 +46,7 @@ Speaker: [Liza Bolton](https://www.meetup.com/rladies-auckland/events/250117268/
 
 -----------------------------------------------------------------------------------------------
 
-[Dataviz with Summer of Tech - collaberative project](https://github.com/R-LadiesAKL/sotdata)  
+[Dataviz with Summer of Tech - collaborative project](https://github.com/R-LadiesAKL/sotdata)  
 
 
 Date 12 June 2018  
@@ -67,4 +67,23 @@ Workshop facilitator: [Kim Fitter](https://www.meetup.com/rladies-auckland/event
 
 Date 12 September 2018  
 Speaker: [Sarah Marshall](https://www.meetup.com/rladies-auckland/events/253627396/)
+
+-----------------------------------------------------------------------------------------------
+
+[The power of pixels: Using R to explore and exploit features of images](https://annafergusson.github.io/powerpixels/index.html)   and [here](https://github.com/rladies/meetup-presentations_auckland/tree/master/2018-10_powerpixels)
+
+
+Date 18 October 2018  
+Speaker: [Anna Fergusson](https://www.meetup.com/rladies-auckland/events/255112995/)
+
+-----------------------------------------------------------------------------------------------
+
+[Telling Stories with Data](https://github.com/rladies/meetup-presentations_auckland/tree/master/2018-11_telling_stories)
+
+
+Date 29 November 2018  
+Speaker: [Kate Newton](https://www.meetup.com/rladies-auckland/events/256011976/)
+
+
+
 
