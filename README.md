@@ -86,7 +86,7 @@ Speaker: [Kate Newton](https://www.meetup.com/rladies-auckland/events/256011976/
 
 -----------------------------------------------------------------------------------------------
 
-[Hands on Intro to SQL and R](https://github.com/rladies/meetup-presentations_auckland/tree/master/2019-02_Hands_onIntro_SQL_and_R)
+[Hands on Intro to SQL and R](https://itsalocke.com/slides/sqlintro#/) and [here](https://github.com/rladies/meetup-presentations_auckland/blob/master/2019-02_Hands_onIntro_SQL_and_R.Rmd)
 
 
 Date 20 February 2019  
