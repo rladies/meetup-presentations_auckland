@@ -84,6 +84,14 @@ Speaker: [Anna Fergusson](https://www.meetup.com/rladies-auckland/events/2551129
 Date 29 November 2018  
 Speaker: [Kate Newton](https://www.meetup.com/rladies-auckland/events/256011976/)
 
+-----------------------------------------------------------------------------------------------
+
+[Hands on Intro to SQL and R](https://itsalocke.com/slides/sqlintro#/) and [here](https://github.com/rladies/meetup-presentations_auckland/blob/master/2019-02_Hands_onIntro_SQL_and_R.Rmd)
+
+
+Date 20 February 2019  
+Speaker: [Steph Locke](https://www.meetup.com/rladies-auckland/events/258656556/)
+
 
 
 
