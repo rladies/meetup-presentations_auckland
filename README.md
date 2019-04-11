@@ -92,6 +92,23 @@ Speaker: [Kate Newton](https://www.meetup.com/rladies-auckland/events/256011976/
 Date 20 February 2019  
 Speaker: [Steph Locke](https://www.meetup.com/rladies-auckland/events/258656556/)
 
+-----------------------------------------------------------------------------------------------
+
+[Using data science in the wild: My data science journey and current work]()
+
+
+Date 4 March 2019  
+Speaker: [Grace Meyer](https://www.meetup.com/rladies-auckland/events/259247749/)
+
+-----------------------------------------------------------------------------------------------
+
+[Processing large datasets using R](https://github.com/elainemiles/RLadies_multiprocessing) 
+
+
+Date 10 April 2019  
+Speaker: [Elaine Miles](https://www.meetup.com/rladies-auckland/events/259965943/)
+
+
 
 
 
