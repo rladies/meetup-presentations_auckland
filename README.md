@@ -116,11 +116,11 @@ Speaker: [Elaine Miles](https://www.meetup.com/rladies-auckland/events/259965943
 
 Date 12 June 2019  
 
-[Speakers](https://www.meetup.com/rladies-auckland/events/260633292/): 
-[Liza Bolton](www.dataembassy.co.nz/Liza-colours-in-R#18)
-Smita Agrawal
-Jenny Pannell
-Emily Harvey
+[Speakers](https://www.meetup.com/rladies-auckland/events/260633292/):   
+[Liza Bolton](www.dataembassy.co.nz/Liza-colours-in-R#18)  
+Smita Agrawal  
+Jenny Pannell  
+Emily Harvey  
 Megan Guidry - presented without slides
 
 
