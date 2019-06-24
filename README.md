@@ -109,6 +109,20 @@ Date 10 April 2019
 Speaker: [Elaine Miles](https://www.meetup.com/rladies-auckland/events/259965943/)
 
 
+-----------------------------------------------------------------------------------------------
+
+[Social Get Together and Lightning Talks](https://github.com/rladies/meetup-presentations_auckland/blob/master/2019-06_Lightning_talks/) 
+
+
+Date 12 June 2019  
+
+[Speakers](https://www.meetup.com/rladies-auckland/events/260633292/): 
+[Liza Bolton](www.dataembassy.co.nz/Liza-colours-in-R#18)
+Smita Agrawal
+Jenny Pannell
+Emily Harvey
+Megan Guidry - presented without slides
+
 
 
 
