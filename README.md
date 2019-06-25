@@ -111,17 +111,18 @@ Speaker: [Elaine Miles](https://www.meetup.com/rladies-auckland/events/259965943
 
 -----------------------------------------------------------------------------------------------
 
-[Social Get Together and Lightning Talks](https://github.com/rladies/meetup-presentations_auckland/blob/master/2019-06_Lightning_talks/) 
+[Social Get Together and Lightning Talks](https://github.com/rladies/meetup-presentations_auckland/blob/master/2019-06_Lightning_talks/) and [here](https://github.com/R-LadiesAKL/meetup-presentations_auckland/tree/master/2019-06-12_Liza-Bolton_palettes-lightning-talk)
 
 
 Date 12 June 2019  
 
 [Speakers](https://www.meetup.com/rladies-auckland/events/260633292/):   
-[Liza Bolton](www.dataembassy.co.nz/Liza-colours-in-R#18)  
-Smita Agrawal  
-Jenny Pannell  
-Emily Harvey  
-Megan Guidry - presented without slides
+  
+Liza Bolton -  Don't you wish your ggplot had colours like me  
+Smita Agrawal - Automated Machine Learning  
+Jenny Pannell - Turning a Twitter hashtag into a word cloud   
+Emily Harvey  - Using R to automate GIS (spatial) analysis for large number of runs  
+Megan Guidry - learning R at 'Carpentries' workshops (presented without slides)  
 
 
 
