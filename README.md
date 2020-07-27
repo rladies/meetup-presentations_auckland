@@ -136,3 +136,13 @@ Speaker: [Earo Wang](https://www.meetup.com/rladies-auckland/events/270599878/)
 
 -----------------------------------------------------------------------------------------------
 
+
+[Me, Myself, and R](https://cmjt.github.io/slides/rladies) 
+
+
+Date 20 July 2020
+Speaker: [Charlotte Jones-Todd](https://www.meetup.com/rladies-auckland/events/271889636/)
+
+
+-----------------------------------------------------------------------------------------------
+
