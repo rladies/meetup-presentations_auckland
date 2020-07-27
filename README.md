@@ -126,6 +126,14 @@ Megan Guidry - learning R at 'Carpentries' workshops (presented without slides)
 
 -----------------------------------------------------------------------------------------------
 
+[Spatial data and making maps in R (using sf and ggplot2)]() 
+
+
+Date 10 October 2019
+Speaker: [Emily Harvey](https://www.meetup.com/rladies-auckland/events/265086293/)
+
+-----------------------------------------------------------------------------------------------
+
 [Signed, sealed, delivered: An introduction to developing R packages](https://annafergusson.online/signed-sealed-delivered/) 
 
 
