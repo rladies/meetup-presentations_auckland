@@ -125,5 +125,14 @@ Emily Harvey  - Using R to automate GIS (spatial) analysis for large number of r
 Megan Guidry - learning R at 'Carpentries' workshops (presented without slides)  
 
 
+-----------------------------------------------------------------------------------------------
 
+[Presenting like a Kunoichi with Xaringan](https://slides.earo.me/rladiesakl20/) 
+
+
+Date 16 June 2020
+Speaker: [Earo Wang](https://www.meetup.com/rladies-auckland/events/270599878/)
+
+
+-----------------------------------------------------------------------------------------------
 
