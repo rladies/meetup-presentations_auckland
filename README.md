@@ -124,6 +124,16 @@ Jenny Pannell - Turning a Twitter hashtag into a word cloud
 Emily Harvey  - Using R to automate GIS (spatial) analysis for large number of runs  
 Megan Guidry - learning R at 'Carpentries' workshops (presented without slides)  
 
+-----------------------------------------------------------------------------------------------
+
+[Signed, sealed, delivered: An introduction to developing R packages](https://annafergusson.online/signed-sealed-delivered/) 
+
+
+Date 31 October 2019
+Speaker: [Anna Fergusson](https://www.meetup.com/rladies-auckland/events/265650391/)
+
+-----------------------------------------------------------------------------------------------
+
 [Dungeons and Dragons: Data exploration and visualisation](https://towardsdatascience.com/dnd-exploratory-analysis-using-r-d13757b09768) 
 
 
@@ -133,7 +143,7 @@ Speaker: [Lina Berbesi](https://www.meetup.com/rladies-auckland/events/266714417
 
 
 -----------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------
+
 
 
 [Tidy Tuesday: Data exploration and visualisation of Australia fires data](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-07) 
