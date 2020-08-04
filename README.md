@@ -124,6 +124,72 @@ Jenny Pannell - Turning a Twitter hashtag into a word cloud
 Emily Harvey  - Using R to automate GIS (spatial) analysis for large number of runs  
 Megan Guidry - learning R at 'Carpentries' workshops (presented without slides)  
 
+-----------------------------------------------------------------------------------------------
+
+[Spatial data and making maps in R (using sf and ggplot2)]() 
 
 
+Date 10 October 2019
+Speaker: [Emily Harvey](https://www.meetup.com/rladies-auckland/events/265086293/)
+
+-----------------------------------------------------------------------------------------------
+
+[Signed, sealed, delivered: An introduction to developing R packages](https://annafergusson.online/signed-sealed-delivered/) 
+
+
+Date 31 October 2019
+Speaker: [Anna Fergusson](https://www.meetup.com/rladies-auckland/events/265650391/)
+
+-----------------------------------------------------------------------------------------------
+
+[Dungeons and Dragons: Data exploration and visualisation](https://towardsdatascience.com/dnd-exploratory-analysis-using-r-d13757b09768) 
+
+
+Date 2 December 2019
+Speaker: [Lina Berbesi](https://www.meetup.com/rladies-auckland/events/266714417/)
+
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+[Tidy Tuesday: Data exploration and visualisation of Australia fires data](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-07) 
+
+
+Date 30 January 2020
+Speaker: [Collaberative](https://www.meetup.com/rladies-auckland/events/268047317/)
+
+
+
+-----------------------------------------------------------------------------------------------
+
+[Conversation Analytics with R]() 
+
+
+Date 19 May 2020
+Speaker: [Jayne Ihaka](https://www.meetup.com/rladies-auckland/events/270543249/)
+
+
+-----------------------------------------------------------------------------------------------
+
+
+[Presenting like a Kunoichi with Xaringan](https://slides.earo.me/rladiesakl20/) 
+
+
+Date 16 June 2020
+Speaker: [Earo Wang](https://www.meetup.com/rladies-auckland/events/270599878/)
+
+
+-----------------------------------------------------------------------------------------------
+
+
+[Me, Myself, and R](https://cmjt.github.io/slides/rladies) 
+
+
+Date 20 July 2020
+Speaker: [Charlotte Jones-Todd](https://www.meetup.com/rladies-auckland/events/271889636/)
+
+
+-----------------------------------------------------------------------------------------------
 
