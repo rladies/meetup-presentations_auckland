@@ -1,4 +1,4 @@
-R-Ladies Auckland Events in 2017-2018
+R-Ladies Auckland Events in 2017-2020
 ===================
 
 -----------------------------------------------------------------------------------------------
@@ -126,10 +126,19 @@ Megan Guidry - learning R at 'Carpentries' workshops (presented without slides)
 
 -----------------------------------------------------------------------------------------------
 
+[PredictHQ's ranking systems and event impact analysis with R]() 
+
+
+Date 21 August 2019  
+Speaker: [Dr Xuxu Wang](https://www.meetup.com/rladies-auckland/events/263599396/)
+
+
+-----------------------------------------------------------------------------------------------
+
 [Spatial data and making maps in R (using sf and ggplot2)]() 
 
 
-Date 10 October 2019
+Date 10 October 2019  
 Speaker: [Emily Harvey](https://www.meetup.com/rladies-auckland/events/265086293/)
 
 -----------------------------------------------------------------------------------------------
@@ -137,7 +146,7 @@ Speaker: [Emily Harvey](https://www.meetup.com/rladies-auckland/events/265086293
 [Signed, sealed, delivered: An introduction to developing R packages](https://annafergusson.online/signed-sealed-delivered/) 
 
 
-Date 31 October 2019
+Date 31 October 2019  
 Speaker: [Anna Fergusson](https://www.meetup.com/rladies-auckland/events/265650391/)
 
 -----------------------------------------------------------------------------------------------
@@ -145,7 +154,7 @@ Speaker: [Anna Fergusson](https://www.meetup.com/rladies-auckland/events/2656503
 [Dungeons and Dragons: Data exploration and visualisation](https://towardsdatascience.com/dnd-exploratory-analysis-using-r-d13757b09768) 
 
 
-Date 2 December 2019
+Date 2 December 2019  
 Speaker: [Lina Berbesi](https://www.meetup.com/rladies-auckland/events/266714417/)
 
 
@@ -157,7 +166,7 @@ Speaker: [Lina Berbesi](https://www.meetup.com/rladies-auckland/events/266714417
 [Tidy Tuesday: Data exploration and visualisation of Australia fires data](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-07) 
 
 
-Date 30 January 2020
+Date 30 January 2020  
 Speaker: [Collaberative](https://www.meetup.com/rladies-auckland/events/268047317/)
 
 
@@ -167,7 +176,7 @@ Speaker: [Collaberative](https://www.meetup.com/rladies-auckland/events/26804731
 [Conversation Analytics with R]() 
 
 
-Date 19 May 2020
+Date 19 May 2020  
 Speaker: [Jayne Ihaka](https://www.meetup.com/rladies-auckland/events/270543249/)
 
 
@@ -177,7 +186,7 @@ Speaker: [Jayne Ihaka](https://www.meetup.com/rladies-auckland/events/270543249/
 [Presenting like a Kunoichi with Xaringan](https://slides.earo.me/rladiesakl20/) 
 
 
-Date 16 June 2020
+Date 16 June 2020  
 Speaker: [Earo Wang](https://www.meetup.com/rladies-auckland/events/270599878/)
 
 
@@ -187,8 +196,56 @@ Speaker: [Earo Wang](https://www.meetup.com/rladies-auckland/events/270599878/)
 [Me, Myself, and R](https://cmjt.github.io/slides/rladies) 
 
 
-Date 20 July 2020
+Date 20 July 2020  
 Speaker: [Charlotte Jones-Todd](https://www.meetup.com/rladies-auckland/events/271889636/)
+
+
+-----------------------------------------------------------------------------------------------
+
+[Reproducible reports in R Markdown](https://jacquietran.github.io/2020_aug_rladies_akl/#1) 
+
+
+Date 18 August 2020  
+Speaker: [Jaquie Tran](https://www.meetup.com/rladies-auckland/events/272017539/)
+
+
+-----------------------------------------------------------------------------------------------
+[Comparing predicted travel time data by mode](https://belinda-maher-melburn.netlify.app/auckland#1) 
+
+
+Date 18 August 2020  
+Speaker: [Belinda Maher](https://www.meetup.com/rladies-auckland/events/272017539/)
+
+
+-----------------------------------------------------------------------------------------------
+
+
+[ggplot Transformation](https://github.com/jennysloane/RLadies) 
+
+
+Date 18 August 2020  
+Speaker: [Jenny Sloane](https://www.meetup.com/rladies-auckland/events/272017539/)
+
+
+-----------------------------------------------------------------------------------------------
+
+
+[How do People Spend their Days](https://speakerdeck.com/elvyna/how-do-people-spend-their-days-a-data-viz-journey) 
+
+
+Date 18 August 2020  
+Speaker: [Elvyna Tunggawan](https://www.meetup.com/rladies-auckland/events/272017539/)
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+[R: A Tool for Big Data Visualisation](https://github.com/R-LadiesAKL/meetup-presentations_auckland) 
+
+
+Date 18 August 2020  
+Speaker: [Yi Xue](https://www.meetup.com/rladies-auckland/events/272017539/)
 
 
 -----------------------------------------------------------------------------------------------
