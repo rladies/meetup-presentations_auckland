@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>🎶 Don’t cha wish your ggplot had colours like me? 🎶</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Liza Bolton" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 🎶 Don’t cha wish your ggplot had colours like me? 🎶
+## R Ladies ⚡ Talk
+### Liza Bolton
+### The Data Embassy
+### 2019/06/12
+
+---
+
+
+
+
+[🎶 The Pussycat Dolls - Don't Cha ft. Busta Rhymes](https://www.youtube.com/watch?v=YNSxNsr4wmA)
+
+Image credit: [Giphy](https://giphy.com/gifs/nicole-scherzinger-pussycat-dolls-pcd-zHWESnDS3rJXG)
+
+&lt;img src="https://media.giphy.com/media/zHWESnDS3rJXG/giphy.gif" width="700" style="display: block; margin: auto;" /&gt;
+
+---
+# Colour matters!
+
+&lt;img src="images/color-pencils-colored-pencils-colorful-50996.jpg" width="700" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# Why?
+
+---
+
+# Colours can:
+
+--
+
+- .large[influence emotion, which can influence how people understand your data.]
+
+--
+
+- .large[connect to meaning. (Hot and cold? .red[**Red**] and .blue[**blue**].)]
+
+--
+
+- .large[show **more** or .gray[**less**] with intensity/brightness.]
+
+--
+&lt;br&gt;&lt;/br&gt;
+
+Good discussion in this [interview with Maureen Stone,](https://www.fastcompany.com/3062182/how-to-use-color-to-prove-your-point-from-a-data-viz-expert) a colour expert with Tableau.
+
+
+---
+
+# What's this talk for?
+
+--
+
+- .large[tips about what to think about when *picking* palettes]
+
+--
+
+- .large[showing some cool/useful palettes]
+
+--
+
+# Assumptions I'm making
+
+--
+
+- .large[you are somewhat familiar with `ggplot` and R in general]
+
+--
+
+- .large[you don't need heaps of technical info on hex codes and colour theory for this to be fun and useful]
+
+---
+# How do you tell computers about colours?
+
+--
+.large[You'll usually see a colour written in one of 4 ways:
+- Just as a **colour name**, like "red". Has to be one R recognises - [list here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+
+- As a mix of **hue, saturation and lightness** (HSL)
+
+- As a mix of **redness, greenness and blueness** (RGB)
+
+- As 6 numbers/letters with a # at the front eg. #ff0000 (**Hex code**)]
+
+[Useful colour tool](https://www.w3schools.com/colors/colors_picker.asp)
+
+[Chrome extension for picking colours from webpages](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp/related?hl=en)
+
+---
+class: inverse, middle, center
+
+# What do you need your colours to do?
+
+---
+class: middle, center
+
+.large[Just look different from each other?]
+
+--
+
+.large[You want a **qualitative palette**.]
+
+---
+.left-code[
+## Qualitative palette use case
+
+```r
+# Use the iris dataset
+data("iris")
+
+# Create a simple barchart
+# of mean petal width
+bars &lt;- iris %&gt;% 
+  group_by(Species) %&gt;% 
+  summarise(meanPW = mean(Petal.Width)) %&gt;% 
+  ggplot(aes(x = Species, 
+             y = meanPW, 
+             fill = Species)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  guides(fill = FALSE)
+
+bars
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/bars-1.png)
+]
+
+
+---
+class: middle, center
+
+.large[Show a range from more to less?]
+
+--
+
+.large[You want a **sequential palette**.]
+
+---
+.left-code[
+## Sequential palette use case
+
+```r
+# Use the iris dataset
+data("iris")
+
+# Make a scatterplot
+# points coloured by petal length
+petals &lt;- iris %&gt;% 
+  ggplot(aes(x = Sepal.Length, 
+             y = Sepal.Width,
+             color = Petal.Length)) +
+  geom_point() +
+  theme_minimal() +
+  theme(legend.position="bottom")
+
+petals
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/petals-1.png)
+]
+
+
+---
+class: middle, center
+
+.large[Contrast around a specific point?]
+
+--
+
+.large[You want a **diverging palette**.]
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.small[Thanks to [this Everyday analytics article](https://everydayanalytics.ca/2017/03/when-to-use-sequential-and-diverging-palettes.html) for helping my clarify my thinking on this one.]
+
+---
+## Diverging palette use case
+&lt;img src="images/mf_occup.png" width="650" height="450" style="display: block; margin: auto;" /&gt;
+
+
+[Source: Nathan Yau, Flowing Data]("https://flowingdata.com/2017/09/11/most-female-and-male-occupations-since-1950/")
+
+---
+class: inverse, center, middle
+
+# Palette time!
+
+---
+.left-code[
+# Viridis
+&lt;a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `Viridis`&lt;/button&gt;&lt;/a&gt; 
+
+Perceptually uniform! 
+Gorgeous for continuous data.
+
+
+```r
+library(viridis)
+library(hexbin)
+
+ggplot(data.frame(x = rnorm(10000), 
+                  y = rnorm(10000)), 
+       aes(x = x, y = y)) +
+  geom_hex() + 
+  coord_fixed() + 
+  scale_fill_viridis() + 
+  theme_bw()
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/viridis1-1.png)
+]
+
+---
+# Viridis
+&lt;a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `Viridis`&lt;/button&gt;&lt;/a&gt; 
+
+&lt;img src="images/viridis.png" width="98%" height="450" /&gt;
+
+---
+.left-code[
+# Viridis
+&lt;a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `Viridis`&lt;/button&gt;&lt;/a&gt; 
+
+
+```r
+petals +
+  scale_color_viridis()
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/petalviridis-1.png)
+]
+
+---
+.left-code[
+# Color Brewer
+&lt;a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `RColorBrewer`&lt;/button&gt;&lt;/a&gt;
+
+```r
+# Display all the palettes
+library(RColorBrewer)
+par(mar=c(0,4,0,2))
+display.brewer.all()
+```
+
+```r
+# Notice
+# - sequential
+# - qualitative
+# - diverging
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/colorbrewer-1.png)
+]
+
+---
+.left-code[
+# Pirate palette
+
+&lt;a href="https://cran.r-project.org/web/packages/yarrr/vignettes/piratepal.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `yarrr`&lt;/button&gt;&lt;/a&gt;
+
+
+```r
+yarrr::piratepal(palette = "all")
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/pirate1-1.png)
+]
+
+---
+.left-code[
+# Pirate palette
+
+&lt;a href="https://cran.r-project.org/web/packages/yarrr/vignettes/piratepal.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `yarrr`&lt;/button&gt;&lt;/a&gt;
+
+
+```r
+yarrr::piratepal(
+          palette = "southpark", 
+          trans = .5,
+          plot.result = T)
+```
+[Pirate pal vignette](https://cran.r-project.org/web/packages/yarrr/vignettes/piratepal.html)
+
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/southpark-1.png)
+]
+
+---
+# ochRe
+&lt;a href="https://ropensci.org/blog/2017/11/21/ochre/" target="_blank"&gt;&lt;button class="button"&gt;📦 `ochRe  `&lt;/button&gt;&lt;/a&gt; 🎩 Di Cook [@visnut](https://twitter.com/visnut)
+
+&lt;img src="images/twinghosts_albertnamatjira.jpg" width="600" style="display: block; margin: auto;" /&gt;
+
+---
+.left-code[
+# ochRe
+&lt;a href="https://ropensci.org/blog/2017/11/21/ochre/" target="_blank"&gt;&lt;button class="button"&gt;📦 `ochRe  `&lt;/button&gt;&lt;/a&gt; 🎩 Di Cook [@visnut](https://twitter.com/visnut)
+
+
+```r
+devtools::install_github("ropenscilabs/ochRe")
+library(ochRe)
+
+pal_names &lt;- names(ochre_palettes)
+
+par(mfrow=c(length(ochre_palettes)/2, 2), 
+    lheight = 2, mar=rep(1, 4), adj = 0)
+for (i in 1:length(ochre_palettes)){
+    viz_palette(ochre_palettes[[i]], 
+                pal_names[i])
+}
+```
+
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/ochre2-1.png)
+]
+
+---
+.left-code[
+# Dutchmasters
+&lt;a href="https://edwinth.github.io/blog/dutch-masters/" target="_blank"&gt;&lt;button class="button"&gt;📦 `dutchmasters`&lt;/button&gt;&lt;/a&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+By &lt;a href="https://en.wikipedia.org/wiki/en:Johannes_Vermeer" class="extiw" title="w:en:Johannes Vermeer"&gt;Johannes Vermeer&lt;/a&gt; - Copied from Mauritshuis website, resampled and uploaded by &lt;a href="//commons.wikimedia.org/wiki/User:Crisco_1492" title="User:Crisco 1492"&gt;Crisco 1492&lt;/a&gt; (&lt;a href="//commons.wikimedia.org/wiki/User_talk:Crisco_1492" title="User talk:Crisco 1492"&gt;talk&lt;/a&gt;&lt;span style="white-space:nowrap"&gt;&amp;nbsp;·&lt;/span&gt; &lt;a href="//commons.wikimedia.org/wiki/Special:Contributions/Crisco_1492" title="Special:Contributions/Crisco 1492"&gt;contribs&lt;/a&gt;), &lt;span style="white-space:nowrap"&gt;October 2014&lt;/span&gt;, Public Domain, &lt;a href="https://commons.wikimedia.org/w/index.php?curid=36351343"&gt;Link&lt;/a&gt;
+]
+
+.right-plot[
+
+&lt;img src="images/Meisje_met_de_parel.jpg" width="98%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+.left-code[
+# Dutchmasters
+&lt;a href="https://edwinth.github.io/blog/dutch-masters/" target="_blank"&gt;&lt;button class="button"&gt;📦 `dutchmasters  `&lt;/button&gt;&lt;/a&gt;
+
+```r
+devtools::install_github("EdwinTh/dutchmasters")
+
+library(dutchmasters)
+
+pal_names &lt;- names(dutchmasters)
+
+par(mfrow=c(length(dutchmasters)/2, 2), 
+    lheight = 2, mar=rep(1, 4), adj = 0)
+for (i in 1:length(dutchmasters)){
+    viz_palette(dutchmasters[[i]], pal_names[i])
+}
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/dutchmasters-1.png)
+]
+
+---
+# Ghibli
+&lt;a href="https://github.com/ewenme/ghibli" target="_blank"&gt;&lt;button class="button"&gt;📦 `ghibli  `&lt;/button&gt;&lt;/a&gt; 🎩 Jacquie Tran [@jacquietran](https://twitter.com/jacquietran)
+
+&lt;img src="images/ghibli.png" width="600" style="display: block; margin: auto;" /&gt;
+
+---
+.left-code[
+# Ghibli
+&lt;a href="https://github.com/ewenme/ghibli" target="_blank"&gt;&lt;button class="button"&gt;📦 `ghibli  `&lt;/button&gt;&lt;/a&gt; 🎩 Jacquie Tran [@jacquietran](https://twitter.com/jacquietran)
+
+
+```r
+library(ghibli)
+
+# Display palettes with names
+par(mfrow=c(9,3))
+for(i in names(ghibli_palettes)) {
+  print(ghibli_palette(i))
+}
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/ghibli-1.png)
+]
+
+---
+.left-code[
+# Wes Anderson
+&lt;a href="https://github.com/karthik/wesanderson" target="_blank"&gt;&lt;button class="button"&gt;📦 `wesanderson`&lt;/button&gt;&lt;/a&gt; 
+
+```r
+library(wesanderson)
+
+# Display palettes with names
+par(mfrow=c(10,2))
+for(i in names(wes_palettes)) {
+  print(wes_palette(i))
+}
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/wesanderson-1.png)
+]
+
+---
+.left-code[
+# Harry Potter
+&lt;a href="https://github.com/aljrico/harrypotter" target="_blank"&gt;&lt;button class="button"&gt;📦 `harrypotter`&lt;/button&gt;&lt;/a&gt; 🎩 Anna Fergusson [@annafergusson](https://twitter.com/annafergusson)
+
+```r
+library(harrypotter)
+
+ggplot(data.frame(x = rnorm(1e4), 
+                  y = rnorm(1e4)), 
+       aes(x = x, y = y)) +
+  geom_hex() + 
+	coord_fixed() +
+  scale_fill_hp(house = "LunaLovegood") + 
+	theme_bw()
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/luna-1.png)
+]
+
+---
+# Harry Potter
+&lt;a href="https://github.com/aljrico/harrypotter" target="_blank"&gt;&lt;button class="button"&gt;📦 `harrypotter`&lt;/button&gt;&lt;/a&gt; 🎩 Anna Fergusson [@annafergusson](https://twitter.com/annafergusson)
+
+&lt;img src="images/luna_lovegood.png" width="600" style="display: block; margin: auto;" /&gt;
+
+---
+.left-code[
+# ggsci
+&lt;a href="https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `ggsci`&lt;/button&gt;&lt;/a&gt;  
+A mixture of academic journal palettes and pop culture references.
+
+
+```r
+library(ggsci)
+
+ggplot(subset(diamonds, carat &gt;= 2.2),
+       aes(x = table, y = price, colour = cut)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "loess", 
+              alpha = 0.05, size = 1, span = 1) +
+  theme_dark() + theme(
+    panel.background = 
+      element_rect(fill = "#2D2D2D"),
+    legend.key = 
+      element_rect(fill = "#2D2D2D")) +
+  scale_fill_tron()
+```
+]
+
+.right-plot[
+![](Liza-colours-in-R_files/figure-html/ggsci-1.png)
+]
+
+---
+# Accessibility resources
+
+- [How to design for colour blindness](https://usabilla.com/blog/how-to-design-for-color-blindness/) with a great link to a [colour blindness simulator](http://www.color-blindness.com/coblis-color-blindness-simulator/)
+
+- &lt;a href="https://cran.r-project.org/web/packages/dichromat/dichromat.pdf" target="_blank"&gt;&lt;button class="button"&gt;📦 `dichromat`&lt;/button&gt;&lt;/a&gt; - Collapse red-green or green-blue distinctions to simulate the effects of different types of color-blindness.
+
+---
+# Other resources and lists of resources
+
+- [Paletti, make your own palettes - from the guy behind the Dutchmasters palette](https://edwinth.github.io/blog/paletti/)
+
+- [Good compilation of resources here](https://blog.prototypr.io/another-post-about-colours-for-data-visualisation-part-3-diy-palettes-bfc8c8bad72f)
+
+- [Datawrapper blog with resources too](https://blog.datawrapper.de/colorguide/), including Art Palette Experiment by Google, Movies
+
+- &lt;a href="http://colorspace.r-forge.r-project.org/articles/hcl_palettes.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `colorspace`&lt;/button&gt;&lt;/a&gt; - The Colour Space package has lots of great information and palette options.
+
+- [Greyscale functionality in ggplot is pretty good](https://ggplot2.tidyverse.org/reference/scale_grey.html)
+
+- [Datanovia list of R palettes to know](https://www.datanovia.com/en/blog/top-r-color-palettes-to-know-for-great-data-visualization/)
+
+- [This Color Palette Generator by Steven DeGraeve can help make colour palette from an image](https://www.degraeve.com/color-palette/)
+ 
+- Things to think about - which colours do you put next to each other? [Visual blurring is not good](https://datahero.com/blog/2013/08/08/why-color-matters-in-data-visualisation/)
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "15:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
