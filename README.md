@@ -1,4 +1,4 @@
-R-Ladies Auckland Events in 2017-2018
+R-Ladies Auckland Events in 2017-2021
 ===================
 
 -----------------------------------------------------------------------------------------------
@@ -189,6 +189,17 @@ Speaker: [Earo Wang](https://www.meetup.com/rladies-auckland/events/270599878/)
 
 Date 20 July 2020
 Speaker: [Charlotte Jones-Todd](https://www.meetup.com/rladies-auckland/events/271889636/)
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+[Creating Tables for R Markdown with kableExtra]([kableextra_presentation.html.zip](https://github.com/izzy-johnson/meetup-presentations_auckland/files/6368973/kableextra_presentation.html.zip)) 
+
+
+Date 8 April 2021
+Speaker: [Izzy Johnson](https://www.meetup.com/rladies-auckland/events/276942471/)
 
 
 -----------------------------------------------------------------------------------------------
