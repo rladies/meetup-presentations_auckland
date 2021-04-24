@@ -195,7 +195,7 @@ Speaker: [Charlotte Jones-Todd](https://www.meetup.com/rladies-auckland/events/2
 
 
 
-[Creating Tables for R Markdown with kableExtra](https://github.com/izzy-johnson/meetup-presentations_auckland/files/6368973/kableextra_presentation.html.zip)
+[Creating Tables for R Markdown with kableExtra](https://github.com/izzy-johnson/meetup-presentations_auckland/files/6368975/Creating.Tables.for.R.Markdown.Reports.Slides.zip)
 
 
 Date 8 April 2021
