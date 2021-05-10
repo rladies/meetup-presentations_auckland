@@ -1,4 +1,4 @@
-R-Ladies Auckland Events in 2017-2020
+R-Ladies Auckland Events in 2017-2021
 ===================
 
 -----------------------------------------------------------------------------------------------
@@ -250,3 +250,11 @@ Speaker: [Yi Xue](https://www.meetup.com/rladies-auckland/events/272017539/)
 
 -----------------------------------------------------------------------------------------------
 
+
+[Creating Tables for R Markdown with kableExtra](https://github.com/izzy-johnson/meetup-presentations_auckland/files/6369100/Creating.Tables.for.R.Markdown.Reports.Slides.pdf)
+
+Date 8 April 2021
+Speaker: [Izzy Johnson](https://www.meetup.com/rladies-auckland/events/276942471/)
+
+
+-----------------------------------------------------------------------------------------------
