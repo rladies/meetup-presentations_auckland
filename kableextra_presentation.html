@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Creating Tables for R Markdown Reports</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="     Izzy Johnson" />
+    <meta name="date" content="2021-04-08" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Creating Tables for R Markdown Reports
+## ——<br/>The basics, and making them better with kableExtra
+### <br/><br/><br/><br/><br/>Izzy Johnson
+### 8 April 2021
+
+---
+
+
+class: blue-title
+
+&lt;style type="text/css"&gt;
+.remark-slide-content {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.remark-slide-content h1,h2,h3,h4 {
+  font-family: Open Sans, Helvetica, sans-serif;
+  font-weight: 100;
+  text-shadow: 0 0 0px;
+}
+
+.title-slide {
+  background-image: url(table_background_photo.jpeg);
+  background-size: cover;
+}
+
+.title-slide h1 {
+  margin-block-end: 0em;
+  padding-top: 60px;
+  color: black;
+}
+
+.title-slide h2 {
+  margin-block-start: 0em;
+  color: black;
+}
+
+.title-slide h2 {
+  font-size: 30px;
+  color: black;
+}
+
+.title-slide h3 {
+  font-size: 28px;
+  color: black;
+}
+
+.redish {
+  background-color: #FADEDE;
+}
+
+.blue-title {
+  background: linear-gradient(#DAE2EA 15%, #FFFFFF 0%); 
+}
+
+.blue {
+  background-color: #DAE2EA; 
+}
+
+.purple-title {
+  background: linear-gradient(#E6D9F6 15%, #FFFFFF 0%); 
+}
+
+.purple {
+  background-color: #E6D9F6; 
+}
+
+&lt;/style&gt;
+
+
+
+
+
+
+
+
+
+
+
+### Overview:
+
++ Making tables in R
++ R Markdown
++ KableExtra Package
++ Additional Resources 
+
+--
+
+&lt;table class="table table-hover table-striped" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; company &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; cocoa percent &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; company location &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; cocoa percent above 70% &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Arete &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 70% &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8em; "&gt; U.S.A. &lt;/td&gt;
+   &lt;td style="text-align:right;width: 8em; "&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Arete &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 70% &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8em; "&gt; U.S.A. &lt;/td&gt;
+   &lt;td style="text-align:right;width: 8em; "&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ocho &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 100% &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8em; "&gt; New Zealand &lt;/td&gt;
+   &lt;td style="text-align:right;width: 8em; "&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Palette de Bine &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 72% &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8em; "&gt; Canada &lt;/td&gt;
+   &lt;td style="text-align:right;width: 8em; "&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sirene &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 73% &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8em; "&gt; Canada &lt;/td&gt;
+   &lt;td style="text-align:right;width: 8em; "&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Smooth Chocolator, The &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 67% &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8em; "&gt; Australia &lt;/td&gt;
+   &lt;td style="text-align:right;width: 8em; "&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Soma &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 62% &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8em; "&gt; Canada &lt;/td&gt;
+   &lt;td style="text-align:right;width: 8em; "&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Soma &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 70% &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8em; "&gt; Canada &lt;/td&gt;
+   &lt;td style="text-align:right;width: 8em; "&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+class: blue-title
+
+### Making Tables in Base R
+
+
+```r
+table(chocolate_data_sm$company)
+```
+
+```
+## 
+##                  Arete                   Ocho        Palette de Bine 
+##                     22                      6                     11 
+##                 Sirene Smooth Chocolator, The                   Soma 
+##                     11                     16                     15
+```
+
+---
+class: blue-title
+### Making Tables in Base R
+
+
+```r
+table(chocolate_data_sm$company_loc,
+      chocolate_data_sm$cocoa_pct_above_70)
+```
+
+```
+##              
+##                0  1
+##   Australia   14  2
+##   Canada      17 20
+##   New Zealand  3  3
+##   U.S.A.      18  4
+```
+
+---
+class: blue-title
+### Making Tables in Base R
+
+
+```r
+table(mtcars$vs,
+      mtcars$am)
+```
+
+```
+##    
+##      0  1
+##   0 12  6
+##   1  7  7
+```
+
+--
+
+
+```r
+table(mtcars$vs,
+      mtcars$am,
+      dnn = c('VS', 'Transmission: AM'))
+```
+
+```
+##    Transmission: AM
+## VS   0  1
+##   0 12  6
+##   1  7  7
+```
+
+---
+class: blue-title
+### Making Tables in R with dplyr
+
+ + Main functions: group_by() and count()
+  + arrange(), summarise(), mutate(), and ungroup() are also useful
+
+--
+
+
+```r
+chocolate_data_sm %&gt;% 
+  group_by(company) %&gt;%
+  count()
+```
+
+```
+## # A tibble: 6 x 2
+## # Groups:   company [6]
+##   company                    n
+##   &lt;chr&gt;                  &lt;int&gt;
+## 1 Arete                     22
+## 2 Ocho                       6
+## 3 Palette de Bine           11
+## 4 Sirene                    11
+## 5 Smooth Chocolator, The    16
+## 6 Soma                      15
+```
+
+---
+class: blue-title
+### Making Tables in R with dplyr
+
+ + Main functions: group_by() and count()
+  + arrange(), summarise(), mutate(), and ungroup() are also useful
+  
+
+```r
+chocolate_data_sm %&gt;% 
+  group_by(company) %&gt;%
+  count() %&gt;%
+  arrange(-n)
+```
+
+```
+## # A tibble: 6 x 2
+## # Groups:   company [6]
+##   company                    n
+##   &lt;chr&gt;                  &lt;int&gt;
+## 1 Arete                     22
+## 2 Smooth Chocolator, The    16
+## 3 Soma                      15
+## 4 Palette de Bine           11
+## 5 Sirene                    11
+## 6 Ocho                       6
+```
+
+---
+class: blue-title
+
+### Making Tables in R with dplyr
+
+
+```r
+chocolate_data_sm %&gt;% 
+  group_by(company_loc, cocoa_pct_above_70) %&gt;%
+  count()
+```
+
+```
+## # A tibble: 8 x 3
+## # Groups:   company_loc, cocoa_pct_above_70 [8]
+##   company_loc cocoa_pct_above_70     n
+##   &lt;chr&gt;                    &lt;dbl&gt; &lt;int&gt;
+## 1 Australia                    0    14
+## 2 Australia                    1     2
+## 3 Canada                       0    17
+## 4 Canada                       1    20
+## 5 New Zealand                  0     3
+## 6 New Zealand                  1     3
+## 7 U.S.A.                       0    18
+## 8 U.S.A.                       1     4
+```
+
+---
+class: blue-title
+### Making Tables in R with dplyr
+
+
+```r
+chocolate_data_sm %&gt;% 
+  group_by(company_loc, cocoa_pct_above_70) %&gt;%
+  count() %&gt;%
+  ungroup() %&gt;%
+  mutate(percent = (n/sum(n)*100) %&gt;%
+           round(2))
+```
+
+```
+## # A tibble: 8 x 4
+##   company_loc cocoa_pct_above_70     n percent
+##   &lt;chr&gt;                    &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
+## 1 Australia                    0    14   17.3 
+## 2 Australia                    1     2    2.47
+## 3 Canada                       0    17   21.0 
+## 4 Canada                       1    20   24.7 
+## 5 New Zealand                  0     3    3.7 
+## 6 New Zealand                  1     3    3.7 
+## 7 U.S.A.                       0    18   22.2 
+## 8 U.S.A.                       1     4    4.94
+```
+
+---
+
+class: blue-title
+### Making Tables in R with dplyr
+
+
+```r
+chocolate_data_sm %&gt;% 
+  group_by(company_loc, cocoa_pct_above_70) %&gt;%
+  count() %&gt;%
+  mutate(percent = (n/sum(n)*100) %&gt;%
+           round(2))
+```
+
+```
+## # A tibble: 8 x 4
+## # Groups:   company_loc, cocoa_pct_above_70 [8]
+##   company_loc cocoa_pct_above_70     n percent
+##   &lt;chr&gt;                    &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
+## 1 Australia                    0    14     100
+## 2 Australia                    1     2     100
+## 3 Canada                       0    17     100
+## 4 Canada                       1    20     100
+## 5 New Zealand                  0     3     100
+## 6 New Zealand                  1     3     100
+## 7 U.S.A.                       0    18     100
+## 8 U.S.A.                       1     4     100
+```
+---
+class: blue-title
+### Making Tables in R with dplyr
+
+
+```r
+chocolate_data_sm %&gt;% 
+  group_by(company_loc, cocoa_pct_above_70) %&gt;%
+  count() %&gt;%
+  ungroup() %&gt;%
+  mutate(percent = (n/sum(n)*100) %&gt;%
+           round(2) %&gt;%
+           format(nsmall = 2) %&gt;%
+           paste0('%'))
+```
+
+```
+## # A tibble: 8 x 4
+##   company_loc cocoa_pct_above_70     n percent 
+##   &lt;chr&gt;                    &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;   
+## 1 Australia                    0    14 "17.28%"
+## 2 Australia                    1     2 " 2.47%"
+## 3 Canada                       0    17 "20.99%"
+## 4 Canada                       1    20 "24.69%"
+## 5 New Zealand                  0     3 " 3.70%"
+## 6 New Zealand                  1     3 " 3.70%"
+## 7 U.S.A.                       0    18 "22.22%"
+## 8 U.S.A.                       1     4 " 4.94%"
+```
+
+---
+class: blue-title
+### Making Tables in R with dplyr
+
+
+```r
+mtcars %&gt;%
+  group_by(vs,am) %&gt;%
+  count() %&gt;%
+  ungroup() %&gt;%
+  mutate(percent = (n/sum(n)*100) %&gt;%
+           round(2) %&gt;%
+           format(nsmall = 2) %&gt;%
+           paste0('%'))
+```
+
+```
+## # A tibble: 4 x 4
+##      vs    am     n percent
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;  
+## 1     0     0    12 37.50% 
+## 2     0     1     6 18.75% 
+## 3     1     0     7 21.88% 
+## 4     1     1     7 21.88%
+```
+ 
+---
+
+class: blue
+
+### R Markdown (RMD)
+
+&lt;div style='width:35%; float:left;'&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Great for sending reproducible reports to others&lt;/li&gt;
+  
+  &lt;li&gt;Main output files are HTML, PDF and Word&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;div style='width:65%; float:left;'&gt;
+
+&lt;img src="rmd_image.png" width="1933" /&gt;
+
+&lt;/div&gt;
+
+&lt;div style='clear:both;'&gt;
+&lt;/div&gt;
+
+---
+class: purple-title
+### kableExtra Package
+
+ Creates nicer looking tables for your reports!
+ 
+
+  
+&lt;img src="from_this_to_this.jpg" width="23429" /&gt;
+  
+  
+---
+class: redish
+
+&lt;div style='width:18%; float:right;'&gt;
+&lt;img src="kable_extra_logo.svg" style="display: block; margin: auto;" /&gt;
+&lt;/div&gt;
+
+
+### Using the kableExtra Package
+
+&lt;div style='clear:both;'&gt;
+&lt;/div&gt;
+
+  To install the kableExtra package:
+
+```r
+install.packages("kableExtra")
+```
+ &lt;br/&gt;&lt;br/&gt;
+  To load kableExtra:
+
+```r
+library(kableExtra)
+```
+
+
+---
+class: purple-title
+### kableExtra: main functions
+
+  + kable() function comes from knitr to create tables
+  
+--
+
+    + some parameters I often use:
+      * col.names - allows you to rename your column names
+      * caption - adds a caption to the top of your table
+--
+
+  + kable_styling() allows many different options to modify tables easily*
+  
+--
+    
+    + Within this function some things you can do include:
+      * style the font
+      * Alternate the color of your rows
+      * Alter the width and position of your table
+  
+  .footnote[&lt;i&gt;* = at least more easily than having to code all of the modifications from scratch. I have still screamed at my computer while using kable_styling()&lt;/i&gt;]
+
+---
+class: purple
+
+### Live coding time!
+
+![](https://media.giphy.com/media/3ohhwF34cGDoFFhRfy/giphy.gif)
+
+---
+
+class: inverse
+
+### Resources
+
+#### kableExtra (Package by Hao Zhu)
+
+  + An explanation of the main features of the package, written by Hau Zhu: https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+  + R Cookbook explanation of kableExtra: https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html
+    
+#### R Markdown
+
+  + Dataquest's R Markdown Guide: https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/
+  + R Markdown Reference Guide: https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+  + R Markdown Cheatsheet (open R, go to 'Help', 'Cheatsheets', then click 'R Markdown Cheatsheet')
+
+  &lt;i&gt; Chocolate dataset came from Kaggle, "Chocolate Bar Ratings" uploaded by Rachael Tatman&lt;/i&gt;
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
