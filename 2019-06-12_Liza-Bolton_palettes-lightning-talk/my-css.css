@@ -1,0 +1,20 @@
+.red { color: red; }
+.blue { color: blue; }
+.gray { color: gray; }
+.large { font-size: 130% }
+.extralarge { font-size: 150% }
+.small { font-size: 70% }
+
+body.big {
+  font-size: 130%;
+}
+
+.left-code {
+  width: 45%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 55%;
+  float: right;
+} 
